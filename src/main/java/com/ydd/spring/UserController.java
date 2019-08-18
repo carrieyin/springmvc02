@@ -1,13 +1,12 @@
 package com.ydd.spring;
 
-import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.ServletRequestDataBinder;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ydd.domain.User;
@@ -68,6 +67,49 @@ public class UserController {
 	public String receiveMap(UserCustom uc){
 		System.out.println(uc);
 		return "success";
+	}
+	
+	@RequestMapping("list")
+	public String list(Model model){
+		List<User> list = new ArrayList<User>();
+		
+		User user1 = new User();
+		user1.setId(1);
+		user1.setUsername("张三");
+		user1.setBirthday(new Date());
+		user1.setAddress("pek");
+		user1.setSex("男");
+		
+		User user2 = new User();
+		user2.setId(2);
+		user2.setUsername("张三2");
+		user2.setBirthday(new Date());
+		user2.setAddress("pek");
+		user2.setSex("男");
+		
+		User user3 = new User();
+		user3.setId(3);
+		user3.setUsername("张三3");
+		user3.setBirthday(new Date());
+		user3.setAddress("pek");
+		user3.setSex("男");
+		
+		list.add(user1);
+		list.add(user2);
+		list.add(user3);
+		
+		model.addAttribute("list", list);		
+		
+		return "list";
+	}
+
+	//@RequestMapping("update")
+	@RequestMapping("update/{id}")
+	public String update(@PathVariable Integer id){
+		System.out.println(id);
+		
+		return "redirect:/user/list.do";
+		
 	}
 		
 }
