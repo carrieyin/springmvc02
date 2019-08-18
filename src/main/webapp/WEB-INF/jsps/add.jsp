@@ -43,5 +43,35 @@
 		<input type="submit" value="提交">
 	</form>
 	
+	<h1 color="blue" size="10"></h1>
+	<form action="${pageContext.request.contextPath }/user/receiveArray.do"
+		method="post">
+		ID：<input type="checkbox" name="ids"  id="ids" value="1">
+		ID：<input type="checkbox" name="ids"  id="ids" value="2">
+		ID：<input type="checkbox" name="ids"  id="ids" value="3">
+		 
+		<input type="submit" value="提交">
+	</form>
+	
+	<h1 color="blue" size="10"></h1>
+	<form action="${pageContext.request.contextPath }/user/receiveUserList.do"
+		method="post">
+		ID：<input type="text" name="userList[0].id" id="id">
+		姓名：<input type="text" name="userList[0].username" id="username"> 
+		ID：<input type="text" name="userList[1].id" id="id">
+		姓名：<input type="text" name="userList[1].username" id="username"> 
+		 
+		<input type="submit" value="提交">
+	</form>
+	
+	<h1 color="blue" size="10"></h1>
+	<form action="${pageContext.request.contextPath }/user/receiveMap.do"
+		method="post">
+		name：<input type="text" name="map['name']" id="username">
+		ID：<input type="text" name="map['ID']" id="id"> 
+		 
+		<input type="submit" value="提交">
+	</form>
+	
 </body>
 </html>

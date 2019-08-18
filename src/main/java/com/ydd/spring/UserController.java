@@ -52,5 +52,22 @@ public class UserController {
 		return "success";
 	}
 	
+	@RequestMapping("receiveArray")
+	public String receiveUser(Integer[] ids){
+		System.out.println(ids);
+		return "success";
+	}
+	
+	@RequestMapping("receiveUserList")
+	public String receiveUserList(UserCustom uc){
+		System.out.println(uc);
+		return "success";
+	}
+	
+	@RequestMapping("receiveMap")
+	public String receiveMap(UserCustom uc){
+		System.out.println(uc);
+		return "success";
+	}
 		
 }
