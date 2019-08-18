@@ -111,5 +111,21 @@ public class UserController {
 		return "redirect:/user/list.do";
 		
 	}
+	
+	@RequestMapping("forward")
+	public String forward(){
+		//return "forward:list.do";
+		//return "forward:/user/list.do";
+		return "forward:/items/forward.do";
 		
+		
+	}
+	
+	@RequestMapping("redirect")
+	public String redirect(){
+		
+		return "redirect:/items/forward.do";
+		
+		
+	}
 }
