@@ -1,7 +1,17 @@
 package com.ydd.spring;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ydd.domain.User;
+import com.ydd.domain.UserCustom;
 
 @Controller
 @RequestMapping("user")
@@ -23,5 +33,24 @@ public class UserController {
 		return "success";
 	}
 	
-
+	@RequestMapping("receiveString")
+	public String receiveInt(String name){
+		System.out.println(name);
+		return "success";
+	}
+	
+	@RequestMapping("receiveUser")
+	public String receiveUser(User user){
+		System.out.println(user);
+		return "success";
+		
+	}
+	
+	@RequestMapping("receiveCustom")
+	public String receiveUser(UserCustom user){
+		System.out.println(user);
+		return "success";
+	}
+	
+		
 }
